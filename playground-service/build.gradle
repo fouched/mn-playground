@@ -1,28 +1,27 @@
 plugins {
     id("groovy") 
-    id("com.github.johnrengelman.shadow") version "8.1.1"
-    id("io.micronaut.application") version "4.0.2"
-    id("io.micronaut.aot") version "4.0.2"
+    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("io.micronaut.application") version "3.7.10"
 }
 
 version = "0.1"
-group = "co.za.limehouse.service"
+group = "za.co.limehouse.service"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation("io.micronaut:micronaut-http-client")
+    implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
-    implementation("io.micronaut.serde:micronaut-serde-jackson")
-    compileOnly("io.micronaut.serde:micronaut-serde-processor")
+    implementation("jakarta.annotation:jakarta.annotation-api")
+    compileOnly("io.micronaut:micronaut-http-validation")
     runtimeOnly("ch.qos.logback:logback-classic")
-    testImplementation("io.micronaut:micronaut-http-client")
 }
 
-
 application {
-    mainClass.set("co.za.limehouse.service.Application")
+    mainClass.set("za.co.limehouse.service.Application")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
@@ -35,18 +34,7 @@ micronaut {
     testRuntime("spock2")
     processing {
         incremental(true)
-        annotations("co.za.limehouse.service.*")
-    }
-    aot {
-    // Please review carefully the optimizations enabled below
-    // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
-        optimizeServiceLoading = false
-        convertYamlToJava = false
-        precomputeOperations = true
-        cacheEnvironment = true
-        optimizeClassLoading = true
-        deduceEnvironment = true
-        optimizeNetty = true
+        annotations("za.co.limehouse.service.*")
     }
 }
 

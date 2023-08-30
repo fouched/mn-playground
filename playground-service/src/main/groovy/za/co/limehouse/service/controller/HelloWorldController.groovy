@@ -1,4 +1,4 @@
-package co.za.limehouse.service.controller
+package za.co.limehouse.service.controller
 
 import groovy.transform.CompileStatic
 import io.micronaut.http.MediaType

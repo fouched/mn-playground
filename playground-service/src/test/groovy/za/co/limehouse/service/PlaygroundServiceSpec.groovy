@@ -1,4 +1,4 @@
-package co.za.limehouse.service
+package za.co.limehouse.service
 
 import io.micronaut.runtime.EmbeddedApplication
 import io.micronaut.test.extensions.spock.annotation.MicronautTest
