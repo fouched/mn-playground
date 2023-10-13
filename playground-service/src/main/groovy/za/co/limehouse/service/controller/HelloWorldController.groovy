@@ -13,6 +13,6 @@ class HelloWorldController {
     @Get
     @Produces(MediaType.TEXT_PLAIN)
     String index() {
-        "Hello World"
+        "Hello World 1"
     }
 }
