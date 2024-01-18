@@ -1,3 +1,6 @@
+app:
+  version: v1
+  locale: za
 micronaut:
   application:
     name: playgroundService

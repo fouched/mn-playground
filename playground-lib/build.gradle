@@ -1,0 +1,19 @@
+plugins {
+    id("groovy")
+}
+
+version = "0.1"
+group = "za.co.limehouse.lib"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.codehaus.groovy:groovy-all:3.0.18'
+}
+
+java {
+    sourceCompatibility = JavaVersion.toVersion("17")
+    targetCompatibility = JavaVersion.toVersion("17")
+}
