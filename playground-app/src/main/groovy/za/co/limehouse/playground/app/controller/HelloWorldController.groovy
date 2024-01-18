@@ -1,12 +1,12 @@
-package za.co.limehouse.service.controller
+package za.co.limehouse.playground.app.controller
 
 import groovy.transform.CompileStatic
 import io.micronaut.http.annotation.Controller
 import io.micronaut.http.annotation.Post
-import za.co.limehouse.lib.dto.GoodbyeRequest
-import za.co.limehouse.lib.dto.GoodbyeResponse
-import za.co.limehouse.lib.dto.HelloRequest
-import za.co.limehouse.lib.dto.HelloResponse
+import za.co.limehouse.playground.lib.dto.GoodbyeRequest
+import za.co.limehouse.playground.lib.dto.GoodbyeResponse
+import za.co.limehouse.playground.lib.dto.HelloRequest
+import za.co.limehouse.playground.lib.dto.HelloResponse
 
 @CompileStatic
 @Controller('/api/${app.locale}/${app.version}')

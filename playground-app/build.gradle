@@ -23,7 +23,7 @@ dependencies {
 }
 
 application {
-    mainClass.set("za.co.limehouse.service.Application")
+    mainClass.set("za.co.limehouse.playground.app.Application")
 }
 java {
     sourceCompatibility = JavaVersion.toVersion("17")
