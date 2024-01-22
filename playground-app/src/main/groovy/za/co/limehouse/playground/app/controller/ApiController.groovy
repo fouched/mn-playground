@@ -10,20 +10,22 @@ import za.co.limehouse.playground.lib.dto.GoodbyeResponse
 import za.co.limehouse.playground.lib.dto.HelloRequest
 import za.co.limehouse.playground.lib.dto.HelloResponse
 
+import javax.validation.Valid
+
 @CompileStatic
-@Controller('/api/${app.locale}/${app.version}')
-class HelloWorldController {
+@Controller('/${app.locale}/api/${app.version}')
+class ApiController {
 
     @Inject
     HelloWorldService service
 
     @Post('/hello')
-    HelloResponse hello(HelloRequest request) {
+    HelloResponse hello(@Valid HelloRequest request) {
         service.processHelloRequest(request)
     }
 
     @Post('/goodbye')
-    GoodbyeResponse goodbye(GoodbyeRequest request) {
+    GoodbyeResponse goodbye(@Valid GoodbyeRequest request) {
         service.processGoodbyeRequest(request)
     }
 }
