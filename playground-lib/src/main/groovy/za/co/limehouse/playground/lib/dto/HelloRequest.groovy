@@ -10,6 +10,8 @@ class HelloRequest {
     @NotBlank
     String name
     @NotBlank
+    String idNumber
+    @NotBlank
     @Pattern(regexp = ".+[@].+[\\\\.].+", message = "email must be valid")
     String email
     @NotBlank

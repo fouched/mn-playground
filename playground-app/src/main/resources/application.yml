@@ -4,6 +4,10 @@ app:
 micronaut:
   application:
     name: playgroundService
+  caches:
+    responses:
+      charset: 'UTF-8'
+      expire-after-write: 2m
 netty:
   default:
     allocator:

@@ -15,11 +15,13 @@ dependencies {
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.groovy:micronaut-runtime-groovy")
-    implementation("io.micronaut:micronaut-validation")
-
     implementation("jakarta.annotation:jakarta.annotation-api")
+    implementation("io.micronaut:micronaut-validation")
+    implementation("io.micronaut.cache:micronaut-cache-caffeine")
 
     compileOnly("io.micronaut:micronaut-http-validation")
+    compileOnly("io.micronaut.security:micronaut-security-annotations")
+
     runtimeOnly("ch.qos.logback:logback-classic")
 
     implementation project(':playground-lib')
