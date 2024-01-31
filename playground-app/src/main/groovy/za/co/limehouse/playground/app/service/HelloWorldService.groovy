@@ -19,14 +19,24 @@ class HelloWorldService {
     HelloResponse processHelloRequest(HelloRequest request) {
         log.debug('processHelloRequest')
 
-        return calculateHelloResponse(request.idNumber, request.name)
+        return getCacheableHelloResponse(request.idNumber, request.name)
+
+//        return getCacheableHelloResponse2(request)
     }
 
     @Cacheable(parameters = ["idNumber"])
-    HelloResponse calculateHelloResponse(String idNumber, String name) {
+    HelloResponse getCacheableHelloResponse(String idNumber, String name) {
         sleep(3000)
         HelloResponse response = new HelloResponse()
         response.msg = 'Hello ' + name
+        response
+    }
+
+    @Cacheable()
+    HelloResponse getCacheableHelloResponse2(HelloRequest requeset) {
+        sleep(3000)
+        HelloResponse response = new HelloResponse()
+        response.msg = 'Hello ' + requeset.name
         response
     }
 
