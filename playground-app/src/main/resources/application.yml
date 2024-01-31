@@ -1,0 +1,14 @@
+app:
+  version: v1
+  locale: za
+micronaut:
+  application:
+    name: playgroundService
+  caches:
+    responses:
+      charset: 'UTF-8'
+      expire-after-write: 2h
+netty:
+  default:
+    allocator:
+      max-order: 3

@@ -1,0 +1,20 @@
+DROP TABLE IF EXISTS order_detail;
+DROP TABLE IF EXISTS order_hdr;
+DROP TABLE IF EXISTS order_status;
+DROP TABLE IF EXISTS supplier_stock;
+DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS stock_item;
+DROP TABLE IF EXISTS stock_type;
+DROP TABLE IF EXISTS trade;
+DROP TABLE IF EXISTS unit;
+DROP TABLE IF EXISTS block;
+DROP TABLE IF EXISTS plot;
+DROP TABLE IF EXISTS building_plan;
+DROP TABLE IF EXISTS project_phase;
+DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS location;
+
+
+
+
+
