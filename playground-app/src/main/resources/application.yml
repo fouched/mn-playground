@@ -7,7 +7,7 @@ micronaut:
   caches:
     responses:
       charset: 'UTF-8'
-      expire-after-write: 2m
+      expire-after-write: 2h
 netty:
   default:
     allocator:

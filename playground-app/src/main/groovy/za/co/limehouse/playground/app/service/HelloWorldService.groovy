@@ -19,10 +19,22 @@ class HelloWorldService {
     HelloResponse processHelloRequest(HelloRequest request) {
         log.debug('processHelloRequest')
 
-        return getCacheableHelloResponse(request.idNumber, request.name)
+        HelloResponse response = getCacheableHelloResponse(request.idNumber, request.name)
 
-//        return getCacheableHelloResponse2(request)
+        if (response.cached) {
+            return response
+        } else {
+            HelloResponse clone = response.clone() as HelloResponse
+            response.cached = true
+
+            return clone
+        }
+
+
+
     }
+
+    //
 
     @Cacheable(parameters = ["idNumber"])
     HelloResponse getCacheableHelloResponse(String idNumber, String name) {
@@ -32,13 +44,7 @@ class HelloWorldService {
         response
     }
 
-    @Cacheable()
-    HelloResponse getCacheableHelloResponse2(HelloRequest requeset) {
-        sleep(3000)
-        HelloResponse response = new HelloResponse()
-        response.msg = 'Hello ' + requeset.name
-        response
-    }
+
 
 
     GoodbyeResponse processGoodbyeRequest(GoodbyeRequest request) {

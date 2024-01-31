@@ -13,7 +13,7 @@ import za.co.limehouse.playground.lib.dto.HelloResponse
 import javax.validation.Valid
 
 @CompileStatic
-@Controller('/${app.locale}/api/${app.version}')
+@Controller('/api/')
 class ApiController {
 
     @Inject
