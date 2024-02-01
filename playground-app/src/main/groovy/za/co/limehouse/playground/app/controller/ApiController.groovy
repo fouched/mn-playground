@@ -2,6 +2,7 @@ package za.co.limehouse.playground.app.controller
 
 import groovy.transform.CompileStatic
 import io.micronaut.http.annotation.Controller
+import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Post
 import jakarta.inject.Inject
 import za.co.limehouse.playground.app.service.HelloWorldService
@@ -27,5 +28,11 @@ class ApiController {
     @Post('/goodbye')
     GoodbyeResponse goodbye(@Valid GoodbyeRequest request) {
         service.processGoodbyeRequest(request)
+    }
+
+    @Get("/product/{id}")
+    String getProduct(String id) {
+
+        return "Product - " + id
     }
 }
